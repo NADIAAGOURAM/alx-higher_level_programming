@@ -3,5 +3,5 @@ if __name__ == "__main__":
     import sys
     somme = 0
     for i in range(1, len(sys.argv)):
-         somme += int(argv[i])
+         somme += int(sys.argv[i])
     print("{:d}".format(somme))
