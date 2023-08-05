@@ -45,3 +45,4 @@ def add_integer(a, b=98):
 	>>> add_integer(float('nan'))
 	Traceback (most recent call last):
 	ValueError: cannot convert float NaN to integer
+	"""
