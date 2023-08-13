@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-function that prints a text with 2 new lines
-after each of these characters: ., ? and :
+Module text_indentation
+Adds two new lines after a set of characters.
 """
 
 
@@ -10,19 +10,11 @@ def text_indentation(text):
     after each of these characters {'.', '?', ':'}.
     """
 
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    punctuation_marks = [".", "?", ":"]
-    lines = text.splitlines()
+    for delim in ".:?":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
 
-    for line in lines:
-        line = line.strip()
-        if line:
-            for char in line:
-                print(char, end="")
-                if char in punctuation_marks:
-                    print("\n" * 2, end="")
-            print()
-        else:
-            print()
+    print("{}".format(text), end="")
